@@ -10,7 +10,7 @@ s.close()
 '''
 # This is the original asm code to convert to shellcode
 BITS 32
-xor	eax, eax
+xor eax, eax
 xor ebx, ebx
 xor ecx, ecx
 xor edx, edx
