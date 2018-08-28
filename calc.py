@@ -98,7 +98,7 @@ if __name__ == "__main__":
 	main()
 
 '''
-+ Some remiders:
++ Some reminders:
 0x1: Making use of the vulnerability of calc(), parse_expr() and eval() function allows us reading any value in the stack behind
 	count variable(v1) (+offset), and resetting them (+offset+remain_value) with these values we want to exploit (we can use ROPgadget 
 	to find some piece of code because NX is enable, so I think shellcode doesn't work)
