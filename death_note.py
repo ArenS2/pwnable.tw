@@ -6,20 +6,6 @@ def add(index, name):
 	s.sendline(str(index))
 	_ = s.recv()
 	s.sendline(name)
-	#_ = s.recv()
-def show(index):
-	s.sendline(str(2))
-	_ = s.recv()
-	s.sendline(str(index))
-	_ = s.recv()
-def delete(index):
-	s.sendline(str(3))
-	_ = s.recv()
-	s.sendline(str(index))
-	_ = s.recv()
-def exits():
-	s.sendline(str(4))
-
 
 s = remote("chall.pwnable.tw", 10201)
 s.recv()
