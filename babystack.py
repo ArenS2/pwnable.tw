@@ -1,7 +1,7 @@
 from pwn import *
 
-#r = remote("chall.pwnable.tw", 10205)
-r = process("./babystack")
+r = remote("chall.pwnable.tw", 10205)
+#r = process("./babystack")
 r.recvuntil(">> ")
 
 #gdb.attach(r)
