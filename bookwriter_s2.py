@@ -51,7 +51,6 @@ def info(question, author):
 def quit():
 	r.sendline("5")
 
-
 r.recvuntil("Author :")
 author = "Nof"
 r.send(author)
