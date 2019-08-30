@@ -119,3 +119,4 @@ r.send(payload)
 
 r.interactive()
 
+# how stupid i'm when leaking libc base
