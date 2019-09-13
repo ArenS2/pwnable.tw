@@ -34,6 +34,7 @@ mov     ds:note[eax*4], edx
 sub     esp, 0Ch
 push    offset aDone    ; "Done !"
 call    _puts
+------
 '''
 '''
 here is where shellcode from
