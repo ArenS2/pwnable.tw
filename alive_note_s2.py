@@ -28,7 +28,6 @@ def delete(index):
 	r.recvuntil("Index :")
 	r.sendline(str(index))
 	r.recvuntil("Your choice :")
-
 def jumping():
 	add(-1, "a")
 	add(-1, "a")
